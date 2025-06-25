@@ -1,0 +1,33 @@
+<mat-icon
+    *ngIf="!nativeMatFontIcon"
+    [ngClass]="['svg-icon', cssClass, (isDarkMode$ | async) ? 'dark' : '']"
+    [ngStyle]="{
+        'font-size': fontSize ?? size + 'px',
+        height: size + 'px',
+        width: size + 'px'
+    }"
+    [svgIcon]="icon"
+    [color]="color"
+    [ariaLabel]="ariaLabel"
+    [matTooltip]="tooltip"
+    [attr.matPrefix]="matPrefix"
+    [attr.matSuffix]="matSuffix"
+>
+</mat-icon>
+
+<mat-icon
+    *ngIf="!!nativeMatFontIcon"
+    [ngClass]="[cssClass]"
+    [ngStyle]="{
+        'font-size': size + 'px',
+        height: size + 'px',
+        width: size + 'px'
+    }"
+    [color]="color"
+    [ariaLabel]="ariaLabel"
+    [matTooltip]="tooltip"
+    [attr.matPrefix]="matPrefix"
+    [attr.matSuffix]="matSuffix"
+>
+    {{ nativeMatFontIcon }}
+</mat-icon>

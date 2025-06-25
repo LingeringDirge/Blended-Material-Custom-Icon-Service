@@ -1,0 +1,32 @@
+@import (reference) 'flex-layout.less';
+
+:host {
+    .align-items(center);
+    .justify-content(center);
+    width: min-content;
+
+    ::ng-deep mat-icon {
+        &.svg-icon {
+            .align-items(center);
+            .justify-content(center);
+
+            svg * {
+                fill: var(--light-primary-color); // Fill color for the dark theme
+            }
+        }
+
+        &.dark {
+            svg * {
+                fill: var(--dark-primary-color); // Fill color for the dark theme
+            }
+        }
+    }
+}
+
+:host(.flex-display) {
+    ::ng-deep mat-icon {
+        &.svg-icon {
+            .flex-display;
+        }
+    }
+}
